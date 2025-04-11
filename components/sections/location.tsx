@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export default function Location() {
   return (
-    <div className="space-y-8 z-50">
+    <div className="space-y-8  z-50">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
