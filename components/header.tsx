@@ -40,7 +40,7 @@ export default function Header() {
               animate={{ opacity: 1, x: 0 }}
               className="text-3xl font-bold tracking-tight text-white"
             >
-              C-Tech
+              C-Hack
             </motion.span>
           </Link>
 
