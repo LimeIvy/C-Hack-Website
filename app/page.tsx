@@ -1,6 +1,3 @@
-"use client"
-
-import { useRef } from "react"
 import Header from "@/components/header"
 import Overview from "@/components/sections/overview"
 import Activities from "@/components/sections/activities"
@@ -9,10 +6,8 @@ import Contact from "@/components/sections/contact"
 import ScrollGear from "@/components/ScrollGear"
 
 export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null)
-
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-gray-900 text-gray-100">
+    <div className="relative min-h-screen bg-gray-900 text-gray-100">
       <Header />
 
       <main className="container mx-auto px-4 py-16 space-y-32 ">
