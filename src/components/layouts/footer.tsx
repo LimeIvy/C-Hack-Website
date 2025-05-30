@@ -8,11 +8,11 @@ function getCopyrightYearText(startYear: number): string {
 
 
 export default function Footer(): JSX.Element {
-    return (
-      <footer>
-        <address className={RobotoSlab.className}>
-            Copyright &copy; {getCopyrightYearText(2025)} Terminal. All rights reserved.
-        </address>
-      </footer>
-    );
+  return (
+    <footer>
+      <address className={RobotoSlab.className}>
+        Copyright &copy; {getCopyrightYearText(2025)} Terminal. All rights reserved.
+      </address>
+    </footer>
+  );
 }

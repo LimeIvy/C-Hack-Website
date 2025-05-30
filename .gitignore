@@ -142,3 +142,9 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/node
+
+# Prefer pnpm
+package-lock.json
+#pnpm-lock.yaml
+yarn.lock
+bun.lock

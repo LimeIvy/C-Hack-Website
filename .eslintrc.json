@@ -1,0 +1,42 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "plugins": [
+    "import",
+    "sonarjs",
+    "unicorn"
+  ],
+  "extends": [
+    "google",
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:import/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "max-len": ["warn", { "code": 120 }],
+    "new-cap": ["error", { "capIsNew": false}],
+    "object-curly-spacing": ["error", "always"],
+    "require-jsdoc": "off",
+    "unicorn/catch-error-name": ["error", { "name": "e"}],
+    "unicorn/expiring-todo-comments": "off",
+    "unicorn/no-empty-file": "off",
+    "unicorn/no-negated-condition": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prevent-abbreviations": "warn"
+  },
+  "settings": {
+    "jsdoc": {
+      "tagNamePreference": {
+        "returns": "return"
+      }
+    }
+  }
+}
