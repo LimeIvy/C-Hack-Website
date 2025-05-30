@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'src/**'
+      - '.eslintrc.json'
       - '.github/workflows/test.yml'
   workflow_dispatch:
     inputs:
