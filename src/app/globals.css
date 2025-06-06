@@ -2,12 +2,12 @@
 @config '../../tailwind.config.ts';
 
 :root {
-  --background: #0a0a0a;
+  --background: #111723;
   --foreground: #ededed;
 }
 
 body {
-  color: #ededed;
-  background: #0a0a0a;
+  color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
