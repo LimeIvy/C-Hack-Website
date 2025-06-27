@@ -29,7 +29,7 @@ export default function Overview() {
       >
         <div className="prose prose-invert max-w-none">
           <p className="text-lg leading-relaxed mb-4">
-            C-Techは、プログラミングに興味を持つ学生が集まる学生団体です。私たちは、実践的なスキルを身につけ、ハッカソンで賞を獲得することを目指しています。
+            Terminalは、プログラミングに興味を持つ学生が集まる中京大学の学生団体です。私たちは、実践的なスキルを身につけ、ハッカソンで賞を獲得することを目指しています。
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
