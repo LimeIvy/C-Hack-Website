@@ -23,19 +23,19 @@ export default function ScrollGear() {
       <div className="fixed bottom-0 right-0 z-0 overflow-hidden w-[180px] h-[180px] md:w-[270px] md:h-[270px] pointer-events-none">
         <Image
           src="/Gear.png"
-        alt="Gear"
-        width={1000}
-        height={1000}
-        style={{
-          transform: `rotate(${rotation}deg)`,
-          transition: 'transform 0.1s ease-out',
-          position: 'absolute',
-          bottom: '-30%',
-          right: '-30%',
-          filter: 'invert(70%) sepia(20%) saturate(1000%) hue-rotate(100deg) brightness(90%) contrast(90%)',
-        }}
-      />
-     </div>
+          alt="Gear"
+          width={1000}
+          height={1000}
+          style={{
+            transform: `rotate(${rotation}deg)`,
+            transition: 'transform 0.1s ease-out',
+            position: 'absolute',
+            bottom: '-30%',
+            right: '-30%',
+            filter: 'invert(70%) sepia(20%) saturate(1000%) hue-rotate(100deg) brightness(90%) contrast(90%)',
+          }}
+        />
+      </div>
     </div>
   );
 } 

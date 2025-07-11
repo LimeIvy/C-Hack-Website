@@ -16,54 +16,54 @@ import globals from 'globals';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all
 });
 
 
 export default defineConfig([
-    sonarjs.configs.recommended,
-    unicorn.configs.recommended,
-    {
-        files: ['**/*.{js,mjs,cjs,ts,tsx}'],
+  sonarjs.configs.recommended,
+  unicorn.configs.recommended,
+  {
+    files: ['**/*.{js,mjs,cjs,ts,tsx}'],
 
-        extends: fixupConfigRules(compat.extends(
-            'next/core-web-vitals',
-            'next/typescript',
-        )),
+    extends: fixupConfigRules(compat.extends(
+      'next/core-web-vitals',
+      'next/typescript',
+    )),
 
-        plugins: {
-            '@stylistic': stylistic,
-        },
-
-
-        languageOptions: {
-            globals: {
-                ...globals.node,
-            },
-            ecmaVersion: 2024,
-            sourceType: 'module',
-        },
-
-        settings: {
-        },
-
-        rules: {
-            'max-len': ['warn', { code: 120 }],
-            'new-cap': ['error', { capIsNew: false }],
-            'object-curly-spacing': ['error', 'always'],
-            'require-jsdoc': 'off',
-
-            '@stylistic/quotes': ['error', 'single'],
-
-            'unicorn/catch-error-name': ['error', { name: 'e' }],
-            'unicorn/expiring-todo-comments': 'off',
-            'unicorn/filename-case': ['error', { cases: { camelCase: true } }],
-            'unicorn/no-empty-file': 'off',
-            'unicorn/no-negated-condition': 'off',
-            'unicorn/no-null': 'off',
-            'unicorn/prevent-abbreviations': 'warn',
-        },
+    plugins: {
+      '@stylistic': stylistic,
     },
+
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+      ecmaVersion: 2024,
+      sourceType: 'module',
+    },
+
+    settings: {
+    },
+
+    rules: {
+      'max-len': ['warn', { code: 120 }],
+      'new-cap': ['error', { capIsNew: false }],
+      'object-curly-spacing': ['error', 'always'],
+      'require-jsdoc': 'off',
+
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/quotes': ['error', 'single'],
+
+      'unicorn/catch-error-name': ['error', { name: 'e' }],
+      'unicorn/expiring-todo-comments': 'off',
+      'unicorn/filename-case': ['error', { cases: { camelCase: true } }],
+      'unicorn/no-empty-file': 'off',
+      'unicorn/no-negated-condition': 'off',
+      'unicorn/no-null': 'off',
+      'unicorn/prevent-abbreviations': 'warn',
+    },
+  },
 ]);
