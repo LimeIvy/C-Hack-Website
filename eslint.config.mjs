@@ -57,6 +57,14 @@ export default defineConfig([
       '@stylistic/indent': ['error', 2],
       '@stylistic/quotes': ['error', 'single'],
 
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
+
       'unicorn/catch-error-name': ['error', { name: 'e' }],
       'unicorn/expiring-todo-comments': 'off',
       'unicorn/filename-case': ['error', { cases: { camelCase: true } }],
