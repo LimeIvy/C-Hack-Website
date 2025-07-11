@@ -3,7 +3,7 @@ import Overview from "@/components/sections/overview"
 import Activities from "@/components/sections/activities"
 import Location from "@/components/sections/location"
 import Contact from "@/components/sections/contact"
-import ScrollGear from "@/components/ScrollGear"
+import ScrollGear from "@/components/scrollGear"
 
 export default function Home() {
   return (

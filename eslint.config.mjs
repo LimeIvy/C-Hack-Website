@@ -51,6 +51,7 @@ export default defineConfig([
 
             'unicorn/catch-error-name': ['error', { name: 'e' }],
             'unicorn/expiring-todo-comments': 'off',
+            'unicorn/filename-case': ['error', { cases: { camelCase: true } }],
             'unicorn/no-empty-file': 'off',
             'unicorn/no-negated-condition': 'off',
             'unicorn/no-null': 'off',
