@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { MapPin, Code } from "lucide-react"
-import Image from "next/image"
+import { motion } from 'framer-motion'
+import { MapPin, Code } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Location() {
   return (
@@ -49,7 +49,7 @@ export default function Location() {
 
             <div className="mt-6 p-4 bg-gray-900 rounded border border-gray-700">
               <p className="text-sm text-gray-400">
-                <span className="text-emerald-400 font-semibold">注意:</span>{" "}
+                <span className="text-emerald-400 font-semibold">注意:</span>{' '}
                 活動時間外に活動場所に入ることは禁止です。
               </p>
             </div>

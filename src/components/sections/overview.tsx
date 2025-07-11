@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { Terminal, TrendingUp, Code, Users } from "lucide-react"
+import { motion } from 'framer-motion'
+import { Terminal, TrendingUp, Code, Users } from 'lucide-react'
 
 export default function Overview() {
   return (

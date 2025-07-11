@@ -1,9 +1,9 @@
-import Header from "@/components/header"
-import Overview from "@/components/sections/overview"
-import Activities from "@/components/sections/activities"
-import Location from "@/components/sections/location"
-import Contact from "@/components/sections/contact"
-import ScrollGear from "@/components/scrollGear"
+import Header from '@/components/header'
+import Overview from '@/components/sections/overview'
+import Activities from '@/components/sections/activities'
+import Location from '@/components/sections/location'
+import Contact from '@/components/sections/contact'
+import ScrollGear from '@/components/scrollGear'
 
 export default function Home() {
   return (

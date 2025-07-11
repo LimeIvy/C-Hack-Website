@@ -1,31 +1,31 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { Code, Users, Trophy, BookOpen } from "lucide-react"
-import Image from "next/image"
+import { motion } from 'framer-motion'
+import { Code, Users, Trophy, BookOpen } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Activities() {
   const activities = [
     {
-      title: "ハッカソンでの受賞を目指す",
+      title: 'ハッカソンでの受賞を目指す',
       description:
-        "外部ハッカソンに積極的に参加し、チームで協力して賞を獲得することを目標としています。実践的な経験を通じて、問題解決能力やプログラミング技術を磨きます。",
+        '外部ハッカソンに積極的に参加し、チームで協力して賞を獲得することを目標としています。実践的な経験を通じて、問題解決能力やプログラミング技術を磨きます。',
       icon: <Trophy className="h-10 w-10 text-emerald-400" />,
-      image: "/placeholder.svg?height=200&width=400",
+      image: '/placeholder.svg?height=200&width=400',
     },
     {
-      title: "勉強会の開催",
+      title: '勉強会の開催',
       description:
-        "サークル内のメンバーが講師となり、サークル外の学生向けにプログラミング勉強会を定期的に開催します。他人に教えることで自身の理解も深まります。",
+        'サークル内のメンバーが講師となり、サークル外の学生向けにプログラミング勉強会を定期的に開催します。他人に教えることで自身の理解も深まります。',
       icon: <BookOpen className="h-10 w-10 text-emerald-400" />,
-      image: "/placeholder.svg?height=200&width=400",
+      image: '/placeholder.svg?height=200&width=400',
     },
     {
-      title: "サークル内ミニハッカソン",
+      title: 'サークル内ミニハッカソン',
       description:
-        "1ヶ月程度の期間でグループを組み、共同開発プロジェクトに取り組みます。最後に成果発表会を行い、お互いの成長を確認します。",
+        '1ヶ月程度の期間でグループを組み、共同開発プロジェクトに取り組みます。最後に成果発表会を行い、お互いの成長を確認します。',
       icon: <Users className="h-10 w-10 text-emerald-400" />,
-      image: "/placeholder.svg?height=200&width=400",
+      image: '/placeholder.svg?height=200&width=400',
     },
   ]
 
@@ -53,7 +53,7 @@ export default function Activities() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-8 items-center`}
+            className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 items-center`}
           >
             <div className="w-full md:w-1/2 space-y-4">
               <div className="flex items-center space-x-3">
@@ -65,7 +65,7 @@ export default function Activities() {
             <div className="w-full md:w-1/2">
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
                 <Image
-                  src={activity.image || "/placeholder.svg"}
+                  src={activity.image || '/placeholder.svg'}
                   alt={activity.title}
                   width={400}
                   height={200}

@@ -7,6 +7,7 @@ import { fixupConfigRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 
 // eslint plugins
+import stylistic from '@stylistic/eslint-plugin'
 import sonarjs from 'eslint-plugin-sonarjs';
 import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
@@ -32,6 +33,11 @@ export default defineConfig([
             'next/typescript',
         )),
 
+        plugins: {
+            '@stylistic': stylistic,
+        },
+
+
         languageOptions: {
             globals: {
                 ...globals.node,
@@ -48,6 +54,8 @@ export default defineConfig([
             'new-cap': ['error', { capIsNew: false }],
             'object-curly-spacing': ['error', 'always'],
             'require-jsdoc': 'off',
+
+            '@stylistic/quotes': ['error', 'single'],
 
             'unicorn/catch-error-name': ['error', { name: 'e' }],
             'unicorn/expiring-todo-comments': 'off',

@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { Code, CheckCircle } from "lucide-react"
-import Link from "next/link"
+import { motion } from 'framer-motion'
+import { Code, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
 
 export default function ThanksPage() {
   return (

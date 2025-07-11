@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { Code, Mail, ExternalLink } from "lucide-react"
-import Link from "next/link"
+import { motion } from 'framer-motion'
+import { Code, Mail, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Contact() {
   return (
@@ -55,7 +55,7 @@ export default function Contact() {
 
         <div className="mt-6 p-4 bg-gray-900 rounded border border-gray-700">
           <p className="text-sm text-gray-400">
-            <span className="text-emerald-400 font-semibold">注意:</span>{" "}
+            <span className="text-emerald-400 font-semibold">注意:</span>{' '}
             お問い合わせの際は、お名前、メールアドレスを必ずご記入ください。 返信の際必要となります。
           </p>
         </div>

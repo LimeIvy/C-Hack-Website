@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { motion } from "framer-motion"
-import { Code } from "lucide-react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { motion } from 'framer-motion'
+import { Code } from 'lucide-react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function FormPage() {
   const router = useRouter()
