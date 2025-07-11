@@ -8,9 +8,9 @@ import { useRouter } from 'next/navigation'
 export default function FormPage() {
   const router = useRouter()
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const form = e.currentTarget
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const form = event.currentTarget
     const formData = new FormData(form)
     
     try {
@@ -20,8 +20,8 @@ export default function FormPage() {
         mode: 'no-cors',
       })
       router.push('/form/thanks')
-    } catch (e_) {
-      console.error('Error submitting form:', e_)
+    } catch (e) {
+      console.error('Error submitting form:', e)
     }
   }
 

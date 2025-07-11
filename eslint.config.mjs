@@ -71,7 +71,15 @@ export default defineConfig([
       'unicorn/no-empty-file': 'off',
       'unicorn/no-negated-condition': 'off',
       'unicorn/no-null': 'off',
-      'unicorn/prevent-abbreviations': 'warn',
+      'unicorn/prevent-abbreviations': [
+        'warn',
+        {
+          allowList: {
+            'e': true,
+            'utils': true,
+          }
+        },
+      ],
     },
   },
 ]);
