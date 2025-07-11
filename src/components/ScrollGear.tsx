@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function ScrollGear() {
   const [rotation, setRotation] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerReference = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +19,7 @@ export default function ScrollGear() {
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerReference}>
       <div className="fixed bottom-0 right-0 z-0 overflow-hidden w-[180px] h-[180px] md:w-[270px] md:h-[270px] pointer-events-none">
         <Image
           src="/Gear.png"

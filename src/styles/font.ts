@@ -1,4 +1,4 @@
-/* eslint-disable new-cap, camelcase */
+ 
 
 import { Geist, Geist_Mono, Roboto_Slab } from 'next/font/google';
 

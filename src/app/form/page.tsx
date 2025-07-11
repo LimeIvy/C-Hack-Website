@@ -20,8 +20,8 @@ export default function FormPage() {
         mode: 'no-cors',
       })
       router.push('/form/thanks')
-    } catch (error) {
-      console.error('Error submitting form:', error)
+    } catch (e_) {
+      console.error('Error submitting form:', e_)
     }
   }
 
