@@ -1,7 +1,7 @@
-import path from 'node:path';
+import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import js from '@eslint/js';
+import * as js from '@eslint/js';
 import { defineConfig } from 'eslint/config';
 import { fixupConfigRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
@@ -10,7 +10,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 import stylistic from '@stylistic/eslint-plugin'
 import sonarjs from 'eslint-plugin-sonarjs';
 import unicorn from 'eslint-plugin-unicorn';
-import globals from 'globals';
+import * as globals from 'globals';
 
 
 const __filename = fileURLToPath(import.meta.url);
