@@ -6,7 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'C-Tech | 中京大学公式エンジニアサークル',
+  title: 'Terminal | 中京大学公式エンジニアサークル',
   description: 'プログラミングに興味を持つ学生のためのサークル'
 }
 
