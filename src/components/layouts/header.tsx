@@ -1,16 +1,23 @@
-'use client'
+'use client';
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Code, Menu, X } from 'lucide-react'
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+
+import { motion } from 'framer-motion';
+import { Code, Menu, X } from 'lucide-react';
+
+
+import LogoImage from '@/public/logo.svg'
+
 
 const navItems = [
   { name: '概要', href: '/' },
   { name: '活動実績', href: '/achievements' },
   { name: '投稿', href: '/posts' },
   { name: 'お問い合わせ', href: '/contact', target: '_blank' },
-]
+];
+
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,13 +42,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center space-x-2">
             <Code className="h-12 w-12 text-emerald-400" />
-            <motion.span
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-3xl font-bold tracking-tight text-white"
-            >
-              Terminal
-            </motion.span>
+            <Image src={LogoImage} alt="ロゴ画像" height={200} className="ml-[-50px] fill-[#111827]" />
           </Link>
 
           {/* Desktop Navigation */}
