@@ -9,7 +9,7 @@ const navItems = [
   { name: '概要', href: '/' },
   { name: '活動実績', href: '/achievements' },
   { name: '投稿', href: '/posts' },
-  { name: 'お問い合わせ', href: '/contact' },
+  { name: 'お問い合わせ', href: '/contact', target: '_blank' },
 ]
 
 export default function Header() {
@@ -55,6 +55,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
+                  target={item.target}
                   className="text-gray-300 hover:text-emerald-400 transition-colors duration-200 font-medium"
                 >
                   {item.name}
@@ -87,6 +88,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  target={item.target}
                   className="text-gray-300 hover:text-emerald-400 transition-colors duration-200 py-2 font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >

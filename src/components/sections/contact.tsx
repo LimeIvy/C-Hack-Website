@@ -45,6 +45,7 @@ export default function Contact() {
             <p className="text-gray-400 mb-4">以下のボタンをクリックして、お問い合わせフォームにアクセスしてください</p>
             <Link
               href="/contact"
+              target="_blank"
               className="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-md transition-colors duration-200"
             >
               <span>フォームを開く</span>

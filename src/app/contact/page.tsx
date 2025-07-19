@@ -20,7 +20,7 @@ export default function FormPage() {
         body: formData,
         mode: 'no-cors',
       });
-      router.push('/form/thanks');
+      router.push('/contact/thanks');
     } catch (e) {
       console.error('Error submitting form:', e);
     }
