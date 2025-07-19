@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 13, 17, 23;
-  --background-end-rgb: 17, 23, 35;
+  --foreground-rgb: 243, 244, 246; /* text-gray-100 */
+  --background-rgb: 17, 24, 39; /* bg-gray-900 */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  background: rgb(var(--background-rgb));
   min-height: 100vh;
   scroll-behavior: smooth;
 }
