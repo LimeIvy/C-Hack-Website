@@ -65,6 +65,8 @@ export default defineConfig([
         },
       ],
 
+      'sonarjs/todo-tag': 'warn',
+
       'unicorn/catch-error-name': ['error', { name: 'e' }],
       'unicorn/expiring-todo-comments': 'off',
       'unicorn/filename-case': ['error', { cases: { camelCase: true } }],
