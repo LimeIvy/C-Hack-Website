@@ -1,8 +1,10 @@
-'use client'
+/* eslint-disable sonarjs/no-redundant-boolean */
 
-import { motion } from 'framer-motion'
-import { Code, Users, Trophy, BookOpen } from 'lucide-react'
-import Image from 'next/image'
+'use client';
+
+import { motion } from 'framer-motion';
+import { Code, Users, Trophy, BookOpen } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Activities() {
   const activities = [
@@ -27,7 +29,7 @@ export default function Activities() {
       icon: <Users className="h-10 w-10 text-emerald-400" />,
       image: '/placeholder.svg?height=200&width=400',
     },
-  ]
+  ];
 
   return (
     <div className="space-y-8 z-50">
@@ -62,7 +64,7 @@ export default function Activities() {
               </div>
               <p className="text-gray-300 leading-relaxed">{activity.description}</p>
             </div>
-            <div className="w-full md:w-1/2">
+            {false && <div className="w-full md:w-1/2">
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src={activity.image || '/placeholder.svg'}
@@ -72,7 +74,7 @@ export default function Activities() {
                   className="w-full h-auto object-cover"
                 />
               </div>
-            </div>
+            </div>}
           </motion.div>
         ))}
       </div>
