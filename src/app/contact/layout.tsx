@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
 import Header from '@/components/layouts/contact/header';
-import { IBMPlexSansJP, NunitoSans } from '@/styles/font';
 
 import type { JSX } from 'react';
 import type { RootLayoutProps } from '@/types';
@@ -22,13 +21,11 @@ export const metadata: Metadata = {
  */
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
-    <html lang="ja">
-      <body className={`${NunitoSans.className} ${IBMPlexSansJP.className}min-h-screen`}>
-        <Header />
-        <main className="container mx-auto px-4 pt-2 md:py-8">
-          {children}
-        </main>
-      </body>
-    </html>
+    <>
+      <Header />
+      <main className="container mx-auto px-4 pt-2 md:py-8">
+        {children}
+      </main>
+    </>
   );
 }

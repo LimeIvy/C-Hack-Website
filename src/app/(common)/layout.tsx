@@ -4,7 +4,6 @@ import '@/styles/globals.css';
 
 import Footer from '@/components/layouts/footer';
 import Header from '@/components/layouts/header';
-import { IBMPlexSansJP, NunitoSans } from '@/styles/font';
 
 import type { JSX } from 'react';
 import type { RootLayoutProps } from '@/types';
@@ -24,14 +23,12 @@ export const metadata: Metadata = {
  */
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
-    <html lang="ja" className="scroll-smooth">
-      <body className={`${NunitoSans.className} ${IBMPlexSansJP.className} relative min-h-screen`}>
-        <Header />
-        <main className="container mx-auto px-4 py-16 space-y-32">
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Header />
+      <main className="container mx-auto px-4 py-16 space-y-32">
+        {children}
+      </main>
+      <Footer />
+    </>
   );
 }
