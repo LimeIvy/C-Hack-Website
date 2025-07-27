@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { motion } from 'framer-motion';
 import { Code } from 'lucide-react';
+import { signIn } from 'next-auth/react';
 
 import type { FormEvent, JSX } from 'react';
 
@@ -20,9 +21,10 @@ export default function LoginPage(): JSX.Element {
   const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     if (uid === 'root') {
-      // Google SSO
+      signIn('google', undefined, { login_hint: password + '@m.chukyo-u.ac.jp', prompt: 'login' });
     } else {
-      // API
+      // TODO: APIを呼び出してログイン処理を行う
+      alert('未実装の機能です。');
     }
   }
 
@@ -50,6 +52,7 @@ export default function LoginPage(): JSX.Element {
             <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">ID</label>
             <input
               type="text"
+              value={uid}
               onChange={(event) => setUid(event.target.value)}
               required
               className="w-full px-3 md:px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm md:text-base"
@@ -59,7 +62,8 @@ export default function LoginPage(): JSX.Element {
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">パスワード</label>
             <input
-              type="password"
+              type={uid === 'root' ? 'text' : 'password'}
+              value={password}
               onChange={(event) => setPassword(event.target.value)}
               required
               className="w-full px-3 md:px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm md:text-base"
