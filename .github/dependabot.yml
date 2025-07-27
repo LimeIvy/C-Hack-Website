@@ -7,7 +7,6 @@ updates:
     commit-message:
       prefix: "deps(gh)"
     assignees:
-      - "LimeIvy"
       - "hayatek-jp"
     open-pull-requests-limit: 10
     target-branch: "develop"
@@ -20,7 +19,6 @@ updates:
       prefix: "deps"
       prefix-development: "deps(dev)"
     assignees:
-      - "LimeIvy"
       - "hayatek-jp"
     open-pull-requests-limit: 10
     target-branch: "develop"
