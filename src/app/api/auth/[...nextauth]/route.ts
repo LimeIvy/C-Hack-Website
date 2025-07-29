@@ -22,6 +22,10 @@ const authOptions: NextAuthOptions = {
     } as ClientType),
   ],
   secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: 'jwt',
+    maxAge: 4 * 60 * 60, // 4時間（秒単位）
+  },
   callbacks: {
     async jwt({ token, account }) {
       if (account) {
