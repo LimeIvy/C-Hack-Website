@@ -49,9 +49,10 @@ export default function LoginPage(): JSX.Element {
           className="space-y-4 md:space-y-6"
         >
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">ID</label>
+            <label htmlFor="uid" className="block text-sm font-medium text-gray-300 mb-1">ID</label>
             <input
               type="text"
+              id="uid"
               value={uid}
               onChange={(event) => setUid(event.target.value)}
               required
@@ -63,6 +64,7 @@ export default function LoginPage(): JSX.Element {
             <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">パスワード</label>
             <input
               type={uid === 'root' ? 'text' : 'password'}
+              id="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               required
