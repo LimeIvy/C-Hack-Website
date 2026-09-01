@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@hono/zod-validator':
         specifier: ^0.7.6
-        version: 0.7.6(hono@4.12.10)(zod@4.3.6)
+        version: 0.7.6(hono@4.12.34)(zod@4.3.6)
       '@next/third-parties':
         specifier: ^16.2.2
         version: 16.2.2(next@16.2.2(@babel/core@7.29.0(supports-color@7.2.0))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
@@ -18,14 +18,14 @@ importers:
         specifier: ^14.1.2
         version: 14.1.2
       drizzle-orm:
-        specifier: ^0.45.1
-        version: 0.45.1(@types/pg@8.23.1)(gel@2.2.0(supports-color@7.2.0))(pg@8.23.0(pg-native@3.9.0))
+        specifier: ^0.45.2
+        version: 0.45.2(@types/pg@8.23.1)(gel@2.2.0(supports-color@7.2.0))(pg@8.23.0(pg-native@3.9.0))
       framer-motion:
         specifier: 12.39.0
         version: 12.39.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       hono:
-        specifier: ^4.12.10
-        version: 4.12.10
+        specifier: ^4.12.34
+        version: 4.12.34
       http-status-ts:
         specifier: ^2.0.1
         version: 2.0.1
@@ -1603,8 +1603,8 @@ packages:
     resolution: {integrity: sha512-7OZcmQUrdGI+DUNNsKBn1aW8qSoKuTH7d0mYgSP8bAzdFzKoovxEFnoGQp2dVs82EOJeYycqRtciopszwUf8bw==}
     hasBin: true
 
-  drizzle-orm@0.45.1:
-    resolution: {integrity: sha512-Te0FOdKIistGNPMq2jscdqngBRfBpC8uMFVwqjf6gtTVJHIQ/dosgV/CLBU2N4ZJBsXL5savCba9b0YJskKdcA==}
+  drizzle-orm@0.45.2:
+    resolution: {integrity: sha512-kY0BSaTNYWnoDMVoyY8uxmyHjpJW1geOmBMdSSicKo9CIIWkSxMIj2rkeSR51b8KAPB7m+qysjuHme5nKP+E5Q==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -2097,8 +2097,8 @@ packages:
   hermes-parser@0.25.1:
     resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
 
-  hono@4.12.10:
-    resolution: {integrity: sha512-mx/p18PLy5og9ufies2GOSUqep98Td9q4i/EF6X7yJgAiIopxqdfIO3jbqsi3jRgTgw88jMDEzVKi+V2EF+27w==}
+  hono@4.12.34:
+    resolution: {integrity: sha512-GqXJqY/xJkJmuloTrnV1ZEXG3fqte+VjkUqoRNZXcrUidiUOP4fMSIHHY4tsqZBK++kVyWmt/AAfSUuy57/eSA==}
     engines: {node: '>=16.9.0'}
 
   http-status-ts@2.0.1:
@@ -3518,9 +3518,9 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@hono/zod-validator@0.7.6(hono@4.12.10)(zod@4.3.6)':
+  '@hono/zod-validator@0.7.6(hono@4.12.34)(zod@4.3.6)':
     dependencies:
-      hono: 4.12.10
+      hono: 4.12.34
       zod: 4.3.6
 
   '@humanfs/core@0.19.1': {}
@@ -4322,7 +4322,7 @@ snapshots:
       esbuild: 0.25.12
       tsx: 4.22.2
 
-  drizzle-orm@0.45.1(@types/pg@8.23.1)(gel@2.2.0(supports-color@7.2.0))(pg@8.23.0(pg-native@3.9.0)):
+  drizzle-orm@0.45.2(@types/pg@8.23.1)(gel@2.2.0(supports-color@7.2.0))(pg@8.23.0(pg-native@3.9.0)):
     optionalDependencies:
       '@types/pg': 8.23.1
       gel: 2.2.0(supports-color@7.2.0)
@@ -4954,7 +4954,7 @@ snapshots:
     dependencies:
       hermes-estree: 0.25.1
 
-  hono@4.12.10: {}
+  hono@4.12.34: {}
 
   http-status-ts@2.0.1: {}
 
