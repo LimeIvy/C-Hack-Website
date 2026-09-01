@@ -261,7 +261,7 @@ export const contactRepliesTable = pgTable(
     id: integer().primaryKey().generatedAlwaysAsIdentity(),
     /** 問い合わせID */
     contactId: integer('contact_id').notNull().references(() => contactsTable.id, { onDelete: 'cascade' }),
-    /** 返信者（nullの場合は問い合わせを行なったものであることを示す） */
+    /** 返信者（null の場合は問い合わせを行ったユーザーであることを示す） */
     authorId: integer('author_id').references(() => usersTable.id, { onDelete: 'set null' }),
     /** 件名 */
     subject: text().notNull(),
