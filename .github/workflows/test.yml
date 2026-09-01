@@ -64,7 +64,7 @@ jobs:
           NODE_ENV: development
       - name: Push to GitHub
         if: ${{ inputs.autofix }}
-        uses: EndBug/add-and-commit@v10.0.0
+        uses: EndBug/add-and-commit@v11.1.1
         with:
           author_name: 'github-actions[bot]'
           author_email: 'action@github.com'
