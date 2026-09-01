@@ -23,7 +23,7 @@
     "hono": "^4.12.10",
     "http-status-ts": "^2.0.1",
     "lucide-react": "^1.37.0",
-    "markdown-it": "^14.1.1",
+    "markdown-it": "^15.0.1",
     "next": "16.2.2",
     "next-auth": "^4.24.11",
     "pg": "^8.23.0",
