@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import Script from 'next/script';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { motion } from 'framer-motion';
@@ -9,7 +10,7 @@ import { Code } from 'lucide-react';
 import type { JSX } from 'react';
 
 type Properties = {
-  submitForm: (name: string, email: string, subject: string, content: string) => Promise<void>;
+  submitForm: (name: string, email: string, subject: string, content: string, turnstileToken: string) => Promise<void>;
 };
 
 export default function ContactForm({ submitForm }: Properties): JSX.Element {
@@ -19,8 +20,51 @@ export default function ContactForm({ submitForm }: Properties): JSX.Element {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [content, setContent] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [isTurnstileErrored, setIsTurnstileErrored] = useState(false);
+  useEffect(() => {
+    const handleTurnstileToken = (event: CustomEvent) => {
+      console.log('Turnstile token received');
+      setIsTurnstileErrored(false);
+      setTurnstileToken(event.detail);
+    };
+    const handleTurnstileError = () => {
+      console.error('Turnstile error occurred');
+      setIsTurnstileErrored(true);
+      setTurnstileToken(null);
+    };
+    const handleTurnstileExpired = () => {
+      console.warn('Turnstile token expired');
+      setTurnstileToken(null);
+    };
+
+    globalThis.addEventListener('turnstileToken', handleTurnstileToken as EventListener);
+    globalThis.addEventListener('turnstileError', handleTurnstileError as EventListener);
+    globalThis.addEventListener('turnstileExpired', handleTurnstileExpired as EventListener);
+
+    return () => {
+      globalThis.removeEventListener('turnstileToken', handleTurnstileToken as EventListener);
+      globalThis.removeEventListener('turnstileError', handleTurnstileError as EventListener);
+      globalThis.removeEventListener('turnstileExpired', handleTurnstileExpired as EventListener);
+    };
+  }, []);
   return (
     <>
+      <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
+      <Script id="turnstile-callback">
+        {`
+          function turnstileCallback(token) {
+            window.dispatchEvent(new CustomEvent('turnstileToken', { detail: token }));
+          }
+          function turnstileErrorCallback() {
+            window.dispatchEvent(new CustomEvent('turnstileError'));
+          }
+          function turnstileExpiredCallback() {
+            window.dispatchEvent(new CustomEvent('turnstileExpired'));
+          }
+        `}
+      </Script>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,9 +83,13 @@ export default function ContactForm({ submitForm }: Properties): JSX.Element {
           <form
             onSubmit={async (event) => {
               event.preventDefault();
+              if (!turnstileToken) {
+                alert('Turnstileの検証が完了していません。');
+                return;
+              }
               setIsSubmitting(true);
               try {
-                await submitForm(name, email, subject, content);
+                await submitForm(name, email, subject, content, turnstileToken);
                 router.push('/contact/thanks');
               } catch (e) {
                 console.error(e);
@@ -116,11 +164,23 @@ export default function ContactForm({ submitForm }: Properties): JSX.Element {
               ></textarea>
             </div>
 
+            <div
+              className="flex justify-center cf-turnstile"
+              data-sitekey={process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY!}
+              data-callback="turnstileCallback"
+              data-error-callback="turnstileErrorCallback"
+              data-expired-callback="turnstileExpiredCallback"
+            ></div>
+
+            <div className="text-xl text-red-500 text-center">
+              {isTurnstileErrored && 'YOU ARE A ROBOT!'}
+            </div>
+
             <div className="flex justify-end">
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="px-4 md:px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-md transition-colors duration-200 text-sm md:text-base"
+                disabled={!turnstileToken || isSubmitting}
+                className={'px-4 md:px-6 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-md transition-colors duration-200 text-sm md:text-base' + (!turnstileToken || isSubmitting ? ' opacity-50 cursor-not-allowed' : '')}
               >
                 {isSubmitting ? '送信中...' : '送信する'}
               </button>
