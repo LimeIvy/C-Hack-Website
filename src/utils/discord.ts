@@ -39,11 +39,17 @@ interface DiscordWebhookPayload {
  * @returns 関数 {@link fetch} の返す {@link Response} オブジェクト
  */
 export async function postDiscordWebhook(webhookUrl: string, payload: DiscordWebhookPayload): Promise<Response> {
-  return await fetch(webhookUrl, {
+  const response = await fetch(webhookUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),
   });
+
+  if (!response.ok) {
+    throw new Error(`Discord webhook request failed: ${response.status} ${response.statusText}`);
+  }
+
+  return response;
 }
