@@ -20,7 +20,7 @@
     "@types/markdown-it": "^14.1.2",
     "drizzle-orm": "^0.45.1",
     "framer-motion": "12.39.0",
-    "hono": "^4.12.10",
+    "hono": "^4.13.5",
     "http-status-ts": "^2.0.1",
     "lucide-react": "^1.37.0",
     "markdown-it": "^15.0.1",
