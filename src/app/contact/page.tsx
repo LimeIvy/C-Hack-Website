@@ -27,6 +27,7 @@ export default function FormPage() {
       console.error('Turnstile verification failed:', turnstileData);
       throw new Error('Turnstile verification failed');
     }
+    // eslint-disable-next-line unicorn/no-unused-array-method-return
     await db.insert(contactsTable).values({ name, email, subject, content });
     try {
       // Webhook送信の成否に関係なく訪問者には成功を返す
