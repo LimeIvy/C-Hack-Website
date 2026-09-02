@@ -55,7 +55,7 @@ const authOptions: NextAuthOptions = {
     async signIn({ user, account }) {
       // Google SSOでログインしたアカウントが登録されているか検証
       if (account?.provider === 'google' && user.email?.endsWith('@m.chukyo-u.ac.jp')) {
-        const cuId = user.email.split('@')[0].toUpperCase();
+        const cuId = user.email.split('@', 1)[0].toUpperCase();
         let canSignIn = false;
         await db.transaction(async (tx) => {
           const rows = await tx.select({ id: usersTable.id, name: usersTable.name, isActive: usersTable.isActive }).from(usersTable).where(eq(usersTable.cuId, cuId)).limit(1);
@@ -75,7 +75,7 @@ const authOptions: NextAuthOptions = {
       return false;
     },
     async jwt({ token, trigger, session }) {
-      const cuId = token.email?.split('@')[0].toUpperCase();
+      const cuId = token.email?.split('@', 1)[0].toUpperCase();
       if (!cuId) {
         throw new Error('Invalid user state');
       }
