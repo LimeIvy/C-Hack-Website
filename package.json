@@ -56,7 +56,7 @@
     "postcss": "^8.5.26",
     "postcss-load-config": "^6.0.1",
     "tailwindcss": "^4.3.3",
-    "tsx": "^4.23.12",
+    "tsx": "^4.23.13",
     "typescript": "^5.8.3"
   }
 }
