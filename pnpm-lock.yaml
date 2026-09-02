@@ -12,8 +12,8 @@ importers:
         specifier: ^0.9.0
         version: 0.9.0(hono@4.13.5)(zod@4.5.4)
       '@next/third-parties':
-        specifier: ^16.2.2
-        version: 16.2.2(next@16.3.3(@babel/core@7.29.0(supports-color@7.2.0))(@types/node@24.12.0)(react-dom@19.2.4(react@19.2.8))(react@19.2.8))(react@19.2.8)
+        specifier: ^16.3.3
+        version: 16.3.3(next@16.3.3(@babel/core@7.29.0(supports-color@7.2.0))(@types/node@24.12.0)(react-dom@19.2.4(react@19.2.8))(react@19.2.8))(react@19.2.8)
       '@types/markdown-it':
         specifier: ^14.1.2
         version: 14.1.2
@@ -995,8 +995,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/third-parties@16.2.2':
-    resolution: {integrity: sha512-1bDDNlv+a+F7/lLaYUOho3Cpd/xWQdBvlY8rM/hgO90cxYr1v8lB2SXyo9rfjc7hi6QTJ3gI1yyCpfd4a3jsqg==}
+  '@next/third-parties@16.3.3':
+    resolution: {integrity: sha512-a7zWBqivPou6cn9vQFcw3V7h7GNsZBKLwC1EOLexBDOwabQ0wO2O9Mi1G8HtCseYvD3z1zcVqN+Ld2gfaZxN1Q==}
     peerDependencies:
       next: ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0-beta.0
       react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
@@ -3719,7 +3719,7 @@ snapshots:
   '@next/swc-win32-x64-msvc@16.3.3':
     optional: true
 
-  '@next/third-parties@16.2.2(next@16.3.3(@babel/core@7.29.0(supports-color@7.2.0))(@types/node@24.12.0)(react-dom@19.2.4(react@19.2.8))(react@19.2.8))(react@19.2.8)':
+  '@next/third-parties@16.3.3(next@16.3.3(@babel/core@7.29.0(supports-color@7.2.0))(@types/node@24.12.0)(react-dom@19.2.4(react@19.2.8))(react@19.2.8))(react@19.2.8)':
     dependencies:
       next: 16.3.3(@babel/core@7.29.0(supports-color@7.2.0))(@types/node@24.12.0)(react-dom@19.2.4(react@19.2.8))(react@19.2.8)
       react: 19.2.8
