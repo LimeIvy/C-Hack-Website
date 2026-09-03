@@ -190,6 +190,7 @@ export default function RootControlPage(): JSX.Element {
             <div className="mt-2 flex justify-center">
               <span className="relative inline-flex items-baseline">
                 <span className="absolute right-full mr-2 text-md whitespace-nowrap top-1/2 -translate-y-1/2">削除対象: </span>
+                {/* eslint-disable-next-line react-hooks/refs*/}
                 <span className="font-mono text-2xl text-red-700">{users.find(u => u.id === targetId.current)?.cuId ?? ''}</span>
               </span>
             </div>
@@ -202,6 +203,7 @@ export default function RootControlPage(): JSX.Element {
               >キャンセル</button>
               <button
                 type="submit"
+                // eslint-disable-next-line react-hooks/refs
                 value={targetId.current}
                 className="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700"
                 disabled={isSubmitting}
@@ -315,6 +317,7 @@ export default function RootControlPage(): JSX.Element {
         </Modal>
       }
       {modalType === ModalType.EDIT_USER &&
+        // eslint-disable-next-line react-hooks/refs
         (() => {
           const user = users.find(u => u.id === targetId.current);
           if (!user) return null;
@@ -514,6 +517,7 @@ export default function RootControlPage(): JSX.Element {
             <div className="mt-2 flex justify-center">
               <span className="relative inline-flex items-baseline">
                 <span className="absolute right-full mr-2 text-md whitespace-nowrap top-1/2 -translate-y-1/2">削除対象: </span>
+                {/* eslint-disable-next-line react-hooks/refs */}
                 <span className="font-mono text-2xl text-red-700">{users.find(u => u.id === targetId.current)?.cuId ?? ''}</span>
               </span>
             </div>
@@ -526,6 +530,7 @@ export default function RootControlPage(): JSX.Element {
               >キャンセル</button>
               <button
                 type="submit"
+                // eslint-disable-next-line react-hooks/refs
                 value={targetId.current}
                 className="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700"
                 disabled={isSubmitting}
