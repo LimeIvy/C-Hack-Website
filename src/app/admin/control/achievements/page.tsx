@@ -218,6 +218,7 @@ export default function AchievementsControlPage(): JSX.Element {
       }
 
       {modalType === ModalType.EDIT_ACHIEVEMENT &&
+        // eslint-disable-next-line react-hooks/refs
         (() => {
           const achievement = achievements.find((current) => current.id === targetId.current);
           if (!achievement) return null;
@@ -430,6 +431,7 @@ export default function AchievementsControlPage(): JSX.Element {
                   削除対象:
                 </span>
                 <span className="font-mono text-2xl text-red-700">
+                  {/* eslint-disable-next-line react-hooks/refs */}
                   {achievements.find((achievement) => achievement.id === targetId.current)?.title ?? ''}
                 </span>
               </span>
